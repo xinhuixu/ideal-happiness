@@ -12,10 +12,18 @@ def intersection(A, B):
 
 def set_diff(A, B):
     return [x for x in A if x not in B]
-    
+
+def sym_diff(A, B):
+    return set_diff(union(A, B), intersection(A, B))
+
+def cart_prod(A, B):
+    return [(a, b) for a in A for b in B]
+
 print 'A: ', A
 print 'B: ', B
 #test cases
 print 'union', union(A, B)
 print 'intersection', intersection(A, B)
 print 'set_diff', set_diff(A, B)
+print 'sym_diff', sym_diff(A, B)
+print 'cart_prod', cart_prod(A, ["green", "blue", "red"])
